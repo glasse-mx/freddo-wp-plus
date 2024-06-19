@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "freddo-plus/phones-block",
+  "title": "Telefonos Freddo",
+  "category": "widgets",
+  "icon": "phones",
+  "description": "Bloque para mostrar los telefonos de Freddo",
+  "keywords": [
+    "freddo",
+    "phones",
+    "telefonos",
+    "contacto",
+    "contact",
+    "telefono",
+    "phone"
+  ],
+  "version": "1",
+  "textdomain": "freddo-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {},
+  "style": "file:./index.css"
+}

@@ -1,0 +1,19 @@
+.phones-block {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.phones-block a {
+    text-decoration: none;
+    color: #ededed;
+    transition: all ease 300ms;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.phones-block a:hover {
+    color: #fff
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "freddo-plus/ws-button-navbar",
+  "title": "WhatsApp Button Navbar",
+  "category": "widgets",
+  "icon": "",
+  "description": "Un boton de WhatsApp en la barra de navegación",
+  "keywords": [
+    "whatsapp",
+    "button",
+    "navbar",
+    "ws-button-navbar",
+    "freddo-plus"
+  ],
+  "version": "1",
+  "textdomain": "freddo-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {},
+  "style": "file:./index.css"
+}

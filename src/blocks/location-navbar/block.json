@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "freddo-plus/location-navbar",
+    "title": "Enlace de ubicación",
+    "category": "widgets",
+    "icon": "",
+    "description": "Agrega un enlace de ubicación a tu sitio web.",
+    "keywords": ["location", "maps","ubicación","mapa","pin"],
+    "version": "1",
+    "textdomain": "freddo-plus",
+    "editorScript": "file:./index.js",
+    "attributes": {
+        "link": {
+            "type": "string",
+            "default": "https://maps.app.goo.gl/9x23AZNkCtTGPcKe6"
+        }
+    },
+    "style": "file:./index.css"	
+}

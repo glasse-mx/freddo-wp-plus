@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "freddo-plus/social-block",
+  "title": "Redes Freddo",
+  "category": "widgets",
+  "icon": "RRSS",
+  "description": "Un bloque para mostrar las redes sociales de Freddo",
+  "keywords": [
+    "social",
+    "redes",
+    "freddo",
+    "RRSS",
+    "iconos",
+    "bloque"
+  ],
+  "version": "1",
+  "textdomain": "freddo-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {},
+  "style": "file:./index.css"
+}
