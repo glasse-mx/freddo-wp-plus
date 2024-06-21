@@ -22,3 +22,55 @@ function freddoPhoneNumber($telefono)
         return $telefono;
     }
 }
+
+/**
+ * Determina si el producto fue publicado en los últimos 30 días
+ * 
+ * @param string $date Fecha de publicación del producto
+ * @return bool Verdadero si el producto es nuevo, falso en caso contrario
+ */
+function freddoIsNew($date)
+{
+    $today = new DateTime(); // Fecha actual
+    $productDate = new DateTime($date);
+    $diff = $today->diff($productDate); // Diferencia entre fechas
+    $diffDays = $diff->days;
+
+    if ($productDate > $today) {
+        // Si la fecha del producto es futura, ajusta los días de diferencia
+        $diffDays = -$diffDays;
+    }
+
+    return $diffDays <= 30;
+}
+/**
+ * Formatea el precio de un producto en Pesos Mexicanos
+ * 
+ * @param float $price Precio del producto
+ * @return string Precio formateado en Pesos Mexicanos
+ */
+function freddoPriceFormat($price)
+{
+    return number_format($price, 2, '.', ',') . ' MXN';
+}
+
+/**
+ * Obtiene el precio mínimo de un producto variable
+ * @param WC_Product $product
+ * @return float
+ */
+function freddoGetMinPrice($product)
+{
+    if ($product->is_type('variable')) {
+        $variations = $product->get_available_variations();
+        $minPrice = $variations[0]['display_price'];
+        foreach ($variations as $variation) {
+            if ($variation['display_price'] < $minPrice) {
+                $minPrice = $variation['display_price'];
+            }
+        }
+        return $minPrice;
+    } else {
+        return $product->get_price();
+    }
+}

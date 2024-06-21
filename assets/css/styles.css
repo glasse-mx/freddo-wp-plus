@@ -1,0 +1,83 @@
+:root {
+    /** Colour Palette for Flavors */
+    --freddo-plus-color-chocolate: #7B3F00;
+    --freddo-plus-color-vanilla: #F3E5AB;
+    --freddo-plus-color-fresa: #FF1493;
+    --freddo-plus-color-coffee: #4B2F1E;
+    --freddo-plus-color-taro: #6A5ACD;
+    --freddo-plus-color-mango: #FFA500;
+    --freddo-plus-color-lemon: #FFFF00;
+    --freddo-plus-color-chamoy: #DC143C;
+    --freddo-plus-color-berries: #8B0000;
+    --freddo-plus-color-yogurt: #FFFFFF;
+    --freddo-plus-color-chery: #C40039;
+    --freddo-plus-color-dulce-leche: #BB5B09;
+    --freddo-plus-color-dulce-maracuya: #FFC700;
+    --freddo-plus-color-dulce-ron-raisings: #A59589;
+    --freddo-plus-color-dulce-ron-peach: #F3A45E;
+    --freddo-plus-color-dulce-cheese: #FFD700;
+    --freddo-plus-color-dulce-pistache: #93C572;
+    --freddo-plus-color-dulce-nuts: #8B4513;
+    --freddo-plus-color-dulce-coconut: #F8F8FF;
+    --freddo-plus-color-dulce-cottoncandy: #FFD1DC;
+}
+
+/* Product card variation */
+
+.variations__display {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.variations__display label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    /* box-shadow: 0 0 12px rgba(0, 0, 0, 0.15); */
+}
+
+.variations__display label input {
+    display: none;
+} 
+
+.variations__display label span {
+    display: none;
+}
+
+.variations__display label .color {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+}
+
+.variations__display .selector__item label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.variations__display .selector__item:hover label span {
+    display: block;
+    width: 80px;
+    font-size: 12px;
+    position: absolute;
+    color: #fff;
+    background: #E09A01;
+    text-align: center;
+    border-radius: 5px;
+    top: -40px;
+}

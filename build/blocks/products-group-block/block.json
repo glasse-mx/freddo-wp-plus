@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "freddo-plus/products-group-block",
+  "title": "Freddo Products Group",
+  "category": "widgets",
+  "icon": "",
+  "description": "Un bloque para agregar los productos en una seleccion de productos",
+  "keywords": [
+    "freddo",
+    "products",
+    "group",
+    "block"
+  ],
+  "version": "1",
+  "textdomain": "freddo-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": 4
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPrice": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDesc": {
+      "type": "boolean",
+      "default": true
+    },
+    "cats": {
+      "type": "array",
+      "default": []
+    },
+    "order": {
+      "type": "string",
+      "default": "asc"
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "price"
+    }
+  },
+  "style": "file:./index.css"
+}

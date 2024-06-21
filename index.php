@@ -38,6 +38,7 @@ foreach ($allFiles as $filename) {
 register_activation_hook(__FILE__, 'freddo_activate_plugin');
 add_action('admin_menu', 'freddo_admin_menus');
 add_action('admin_post_freddo_save_options', 'freddo_save_options_cb');
+add_action('wp_enqueue_scripts', 'freddo_plus_enqueue_cb');
 
 // Blocks
 add_action('init', 'freddo_register_blocks');
