@@ -18,7 +18,12 @@ function freddo_register_blocks()
         ]],
         ["name" => 'menu-card-group'],
         ['name' => 'menu-card'],
-        ['name' => 'product-gallery']
+        ['name' => 'product-action-block', 'options' => [
+            'render_callback' => 'product_action_block_cb'
+        ]],
+        ['name' => 'product-info-block', 'options' => [
+            'render_callback' => 'product_info_block_cb'
+        ]]
     ];
 
     foreach ($blocks as $block) {

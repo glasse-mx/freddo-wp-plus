@@ -27,4 +27,35 @@ export default ({ attributes, setAttributes }) => {
         setIsError(true);
       });
   };
+
+  useEffect(() => {
+    if (productID) {
+      handleGetProductImages();
+    }
+  }, []);
+
+  return (
+    <>
+      {isLoading ? (
+        Spinner
+      ) : isError ? (
+        <div className='error__gallery'>
+          <h3>Error</h3>
+          <h4>Este bloque se debe usar solo en productos</h4>
+        </div>
+      ) : images.length > 0 ? (
+        <ul className='product-gallery'>
+          {images.map((image) => (
+            <li key={image.id}>
+              <img src={image.src} alt={image.alt} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className='empty__gallery'>
+          <h3>{__("No images found", "product-gallery")}</h3>
+        </div>
+      )}
+    </>
+  );
 };

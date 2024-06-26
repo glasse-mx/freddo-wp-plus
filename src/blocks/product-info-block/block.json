@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "freddo-plus/product-info-block",
+    "title": "informacion de producto Freddo",
+    "category": "woocommerce",
+    "icon": "",
+    "description": "bloque de informacion de producto para Freddo Mexico",
+    "keywords": ["freddo", "product", "info", "woocommerce", "mexico"],
+    "version": "1",
+    "textdomain": "freddo-plus",
+    "editorScript": "file:./index.js",
+    "attributes": {},
+    "style": "file:./index.css"	
+}

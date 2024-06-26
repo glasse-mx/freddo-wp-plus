@@ -42,3 +42,7 @@ add_action('wp_enqueue_scripts', 'freddo_plus_enqueue_cb');
 
 // Blocks
 add_action('init', 'freddo_register_blocks');
+
+// Woocommerce Fields
+// add_action('add_meta_boxes', 'add_product_highlights_meta_box');
+// add_action('save_post', 'save_product_highlights_meta');

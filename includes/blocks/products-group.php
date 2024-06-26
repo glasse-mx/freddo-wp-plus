@@ -65,10 +65,6 @@ function freddo_products_group_cb($atts)
                             <?php if ($atts['showTitle']) : ?>
                                 <h3 class="product__title"><?= the_title(); ?></h3>
                             <?php endif; ?>
-
-                            <?php if ($atts['showDesc']) : ?>
-                                <p class="product__description"><?= the_excerpt(); ?></p>
-                            <?php endif; ?>
                         </div>
 
                         <?php if ($atts['showPrice']) : ?>
@@ -111,6 +107,10 @@ function freddo_products_group_cb($atts)
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
+                        <?php endif; ?>
+
+                        <?php if (has_term('maquinas', 'product_cat', $product->get_id())) : ?>
+                            <p class="product__description" style="font-size: 12px;">Extiende tu garantía por un año a partes eléctricas con la compra del regulador.</p>
                         <?php endif; ?>
 
                         <div class="footer">

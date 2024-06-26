@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "freddo-plus/product-action-block",
+    "title": "Bloque de Accion de Producto Freddo",
+    "category": "widgets",
+    "icon": "",
+    "description": "Bloque de compra de producto Freddo",
+    "keywords": ["freddo", "product", "action","add-to-cart", "compra"],
+    "version": "1",
+    "textdomain": "",
+    "editorScript": "file:./index.js",
+    "attributes": {},
+    "style": "file:./index.css"	
+}

@@ -2,55 +2,40 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/product-gallery/edit.js":
-/*!********************************************!*\
-  !*** ./src/blocks/product-gallery/edit.js ***!
-  \********************************************/
+/***/ "./src/blocks/product-action-block/edit.js":
+/*!*************************************************!*\
+  !*** ./src/blocks/product-action-block/edit.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
-  attributes,
-  setAttributes
-}) => {
-  const {
-    images
-  } = attributes;
-  const [isLoading, setIsLoading] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(true);
-  const [isError, setIsError] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
-  const productID = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useSelect)(select => select("core/editor").getCurrentPostId(), []);
-  const handleGetProductImages = () => {
-    _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
-      path: `/wc/v3/products/${productID}`,
-      method: "GET"
-    }).then(product => {
-      setAttributes({
-        images: product.images
-      });
-      setIsLoading(false);
-    }).catch(error => {
-      console.error(error);
-      setIsError(true);
-    });
-  };
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "single-product-details__container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "topbar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sale__badge"
+  }, "Oferta"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "new__badge"
+  }, "Nuevo")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "product-title"
+  }, "Titulo de producto"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "product__description"
+  }, "M\xE1quina para preparar helado suave de 2 sabores y 1 combinado. Con capacidad de producci\xF3n de 25 litros por hora. Ideal si lo que estas buscando es una m\xE1quina de mediana producci\xF3n. Las m\xE1quinas de helado de mesa se recomiendan para mantener en un espacio fijo."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "price__selector"
+  }, "Precio"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "add-to-cart__container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "number",
+    value: "1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", null, "A\xF1adir al carrito"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", null, "Hablar con un agente"))));
 });
 
 /***/ }),
@@ -255,10 +240,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/blocks/product-gallery/main.css":
-/*!*********************************************!*\
-  !*** ./src/blocks/product-gallery/main.css ***!
-  \*********************************************/
+/***/ "./src/blocks/product-action-block/main.css":
+/*!**************************************************!*\
+  !*** ./src/blocks/product-action-block/main.css ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1635,43 +1620,13 @@ module.exports = window["React"];
 
 /***/ }),
 
-/***/ "@wordpress/api-fetch":
-/*!**********************************!*\
-  !*** external ["wp","apiFetch"] ***!
-  \**********************************/
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
 /***/ ((module) => {
 
-module.exports = window["wp"]["apiFetch"];
-
-/***/ }),
-
-/***/ "@wordpress/components":
-/*!************************************!*\
-  !*** external ["wp","components"] ***!
-  \************************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["components"];
-
-/***/ }),
-
-/***/ "@wordpress/data":
-/*!******************************!*\
-  !*** external ["wp","data"] ***!
-  \******************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["data"];
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["element"];
+module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
@@ -1685,23 +1640,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "@wordpress/scripts":
-/*!*********************************!*\
-  !*** external ["wp","scripts"] ***!
-  \*********************************/
+/***/ "./src/blocks/product-action-block/block.json":
+/*!****************************************************!*\
+  !*** ./src/blocks/product-action-block/block.json ***!
+  \****************************************************/
 /***/ ((module) => {
 
-module.exports = window["wp"]["scripts"];
-
-/***/ }),
-
-/***/ "./src/blocks/product-gallery/block.json":
-/*!***********************************************!*\
-  !*** ./src/blocks/product-gallery/block.json ***!
-  \***********************************************/
-/***/ ((module) => {
-
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"freddo-plus/product-gallery","title":"Galeria de Producto Freddo","category":"widgets","icon":"","description":"Un bloque para colocar la galeria personalizadad de producto de Freddo","keywords":["freddo","galeria","producto","imagen","foto","gallery","product","photo","image"],"version":"1","textdomain":"freddo-plus","editorScript":"file:./index.js","attributes":{"images":{"type":"array","default":[]}},"style":"file:./index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"freddo-plus/product-action-block","title":"Bloque de Accion de Producto Freddo","category":"widgets","icon":"","description":"Bloque de compra de producto Freddo","keywords":["freddo","product","action","add-to-cart","compra"],"version":"1","textdomain":"","editorScript":"file:./index.js","attributes":{},"style":"file:./index.css"}');
 
 /***/ })
 
@@ -1774,26 +1719,29 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-/*!*********************************************!*\
-  !*** ./src/blocks/product-gallery/index.js ***!
-  \*********************************************/
+/*!**************************************************!*\
+  !*** ./src/blocks/product-action-block/index.js ***!
+  \**************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_scripts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/scripts */ "@wordpress/scripts");
-/* harmony import */ var _wordpress_scripts__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_scripts__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _block__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block */ "./src/blocks/product-gallery/block.json");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/blocks/product-gallery/edit.js");
-/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../icons */ "./src/icons.js");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.css */ "./src/blocks/product-gallery/main.css");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _block__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block */ "./src/blocks/product-action-block/block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/blocks/product-action-block/edit.js");
+/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.css */ "./src/blocks/product-action-block/main.css");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../icons */ "./src/icons.js");
 
 
 
 
 
-(0,_wordpress_scripts__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block__WEBPACK_IMPORTED_MODULE_1__.name, {
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block__WEBPACK_IMPORTED_MODULE_2__.name, {
   icon: {
-    src: _icons__WEBPACK_IMPORTED_MODULE_3__["default"].primary
+    src: _icons__WEBPACK_IMPORTED_MODULE_5__["default"].primary
   },
-  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"]
+  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /******/ })()
 ;
