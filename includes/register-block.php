@@ -15,7 +15,10 @@ function freddo_register_blocks()
         ['name' => 'location-navbar'],
         ['name' => 'products-group-block', 'options' => [
             'render_callback' => 'freddo_products_group_cb'
-        ]]
+        ]],
+        ["name" => 'menu-card-group'],
+        ['name' => 'menu-card'],
+        ['name' => 'product-gallery']
     ];
 
     foreach ($blocks as $block) {

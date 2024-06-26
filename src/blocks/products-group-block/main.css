@@ -134,3 +134,18 @@
     /* color: #fff; */
     box-shadow: -3px -3px 6px rgba(255,255,255,.25), 3px 3px 6px rgba(0,0,0,.15);
 }
+
+@media screen and (max-width: 1024px) {
+    .products-group-block.cols-3,
+    .products-group-block.cols-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 768px) {
+    .products-group-block.cols-1,
+    .products-group-block.cols-2,
+    .products-group-block.cols-3,
+    .products-group-block.cols-4 {
+        grid-template-columns: 1fr;
+    }
+}

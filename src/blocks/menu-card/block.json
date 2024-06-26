@@ -1,0 +1,55 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "freddo-plus/menu-card",
+    "title": "Tarjeta Publicitaria Freddo",
+    "category": "widgets",
+    "icon": "",
+    "description": "Un bloque de tarjeta para mostrar categorias o item bases en Freddo Mexico Website",
+    "keywords": ["card", "menu", "freddo", "menu-card", "freddo-plus"],
+    "version": "1",
+    "textdomain": "freddo-plus",
+    "editorScript": "file:./index.js",
+    "attributes": {
+        "title" : {
+            "type": "string",
+            "default": "Titulo de la Tarjeta"
+        },
+        "content": {
+            "type": "string",
+            "default": "Contenido de la Tarjeta"
+        },
+        "imgID": {
+            "type": "number",
+            "default": 0
+        },
+        "imgAlt": {
+            "type": "string",
+            "default": "",
+            "source": "attribute",
+            "selector": "img",
+            "attribute": "alt"
+        },
+        "imgURL": {
+            "type": "string",
+            "default": "",
+            "source": "attribute",
+            "selector": "img",
+            "attribute": "src"
+        },
+        "ctaText":{
+            "type": "string",
+            "default": "Ver más"
+        },
+        "ctaLink":{
+            "type": "string",
+            "default": "#"
+        },
+        "cardType": {
+            "type": "string",
+            "default": "1"
+        }
+    },
+    "style": "file:./index.css",
+    "usesContext": ["freddo-plus/card-type"]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "freddo-plus/product-gallery",
+  "title": "Galeria de Producto Freddo",
+  "category": "widgets",
+  "icon": "",
+  "description": "Un bloque para colocar la galeria personalizadad de producto de Freddo",
+  "keywords": [
+    "freddo",
+    "galeria",
+    "producto",
+    "imagen",
+    "foto",
+    "gallery",
+    "product",
+    "photo",
+    "image"
+  ],
+  "version": "1",
+  "textdomain": "freddo-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "images": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "style": "file:./index.css"
+}

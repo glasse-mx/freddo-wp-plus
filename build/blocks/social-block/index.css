@@ -13,4 +13,10 @@
     font-size: 20px;
 }
 
+@media screen and (max-width: 768px) {
+    header .social-icons {
+        display: none;
+    }
+}
+
 /*# sourceMappingURL=index.css.map*/

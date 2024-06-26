@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "freddo-plus/menu-card-group",
+    "title": "Grupo de Tarjetas de muestra",
+    "category": "widgets",
+    "icon": "",
+    "description": "Conjunto de tarjetas de menu/categorias para el sitio web de Freddo Mexico",
+    "keywords": ["freddo", "menu", "card", "group", "tarjeta", "grupo", "menu-card-group", "freddo-plus"],
+    "version": "1",
+    "textdomain": "freddo-plus",
+    "editorScript": "file:./index.js",
+    "attributes": {
+        "cardType": {
+            "type": "string",
+            "default": "1"
+        },
+        "columns": {
+            "type": "number",
+            "default": 3
+        }
+    },
+    "style": "file:./index.css",
+    "providesContext": {
+        "freddo-plus/card-type": "cardType"
+    },
+    "example": {
+        "attributes": {
+            "type": 1,
+            "columns": 4
+        },
+        "innerBlocks": [
+            {
+                "name": "freddo-plus/menu-card",
+                "attributes": {
+                    "title": "Helados",
+                    "description": "Conoce nuestra variedad de helados",
+                    "imgURL": "https://via.placeholder.com/150",
+                    "ctaLink": "#"
+                }
+            }
+        ]
+    }
+}
