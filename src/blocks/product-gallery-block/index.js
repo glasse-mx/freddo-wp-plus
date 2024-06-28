@@ -1,15 +1,17 @@
-import { registerBlockType } from "@wordpress/scripts";
+import { registerBlockType } from "@wordpress/blocks";
 import block from "./block";
-import edit from "./edit";
-import icons from "../../icons";
 import "./main.css";
+import icons from "../../icons";
 
 registerBlockType(block.name, {
+  icon: {
+    src: icons.primary,
+  },
   edit: () => {
     return (
-      <>
-        <h3> Galeria de Producto aqui</h3>
-      </>
+      <div className='product-gallery-block editor'>
+        <h2>Product Gallery Block</h2>
+      </div>
     );
   },
 });

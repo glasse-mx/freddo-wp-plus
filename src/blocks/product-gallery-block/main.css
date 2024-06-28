@@ -1,0 +1,22 @@
+.product-gallery-block.editor {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-gallery-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+    width: 100%;
+}
+
+@media screen and ( max-width: 768px ) {
+    .product-gallery-block .swiper-slide {
+        width: 100%;
+        object-fit: 1/1;
+    }
+}

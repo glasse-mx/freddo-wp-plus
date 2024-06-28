@@ -14,7 +14,7 @@ function product_info_block_cb()
         <?php endif; ?>
 
         <!-- Caracteristicas del producto -->
-        <?php if (isset($highlight)) : ?>
+        <?php if (isset($highlights[0]) && $highlights[0]['title'] != '') : ?>
             <div class="highlights__container">
                 <h3>Características</h3>
                 <ul>
@@ -51,9 +51,9 @@ function product_info_block_cb()
             <div class="content__card">
                 <div class="content__header">
                     <h3>Información de Seguridad</h3>
-                    <i class="fa-solid fa-circle-chevron-up" type="button" data-bs-toggle="collapse" data-bs-target="#safetyInfo" aria-expanded="false" aria-controls="safetyInfo"></i>
+                    <i class="fa-solid fa-circle-chevron-up" type="button" data-bs-toggle="collapse" data-bs-target="#safetyInfo" aria-expanded="true" aria-controls="safetyInfo"></i>
                 </div>
-                <div class="collapse content__body" id="safetyInfo">
+                <div class="collapse content__body show" id="safetyInfo">
                     <div class="info">
                         <div class="col">
                             <img src="<?= FREDDO_WP_PLUS_URL . '/assets/img/safety.png' ?>" alt="Diagrama de Instalacion electrica sugerido">

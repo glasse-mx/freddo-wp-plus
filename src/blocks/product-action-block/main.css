@@ -37,15 +37,48 @@
     text-transform: uppercase;
 }
 
-.single-product-details__container .add-to-cart__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+/* Price settings */
+.price__holder {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.price__holder .price_tag {
+    font-size: 1.75rem;
+    color: #636363;
+    font-weight: 600;
+}
+
+.price__holder .price_tag.scratched {
+    font-size: 1.25rem;
+    text-decoration: line-through !important;
+    opacity: .65;
+}
+
+.price__holder .price_tag b {
+    color: #424243
+}
+
+
+/* Action Buttons */
+
+.add-to-cart__container {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
-.single-product-details__container .add-to-cart__container input {
-    grid-area: 1 / 1 / 2 / 2;
+.add-to-cart__container form {
+    display: grid;
+    grid-template-columns: 15% auto;
+    gap: 1rem;
+}
+
+.add-to-cart__container form input {
+    height: 100%;
+    width: 100%;
+    padding-left: 30px;
 }
 
 .single-product-details__container .add-to-cart__container button {
@@ -57,6 +90,16 @@
     padding: 1rem 2rem;
     border-width: 1px;
     transition: all ease 300ms;
+    width: 100%;
+}
+
+.single-product-details__container .add-to-cart__container button:disabled {
+    opacity: .7;
+}
+
+.single-product-details__container .add-to-cart__container button:disabled:hover {
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .single-product-details__container .add-to-cart__container button:hover {
@@ -65,10 +108,51 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.single-product-details__container .add-to-cart__container button:nth-child(2) {
-    grid-area: 1 / 2 / 2 / 4;
+/* Variations holder */
+.single-product-details__container .sabor__selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.single-product-details__container .add-to-cart__container button:nth-child(3) {
-    grid-area: 2 / 1 / 3 / 4;
+.single-product-details__container .sabor__selector .selector__item label {
+    padding: 5px;
+}
+
+.single-product-details__container .sabor__selector .selector__item:has(input:checked) {
+    background-color: #F3C342;
+}
+
+.single-product-details__container .sabor__selector .selector__item label img {
+    transition: all ease 300ms;
+}
+
+.single-product-details__container .sabor__selector .selector__item:hover label img {
+    transform: scale(1.1);
+}
+
+.single-product-details__container .sabor__selector .selector__item label input {
+    display: none;
+}
+
+
+/* Product Out of Stock */
+.no__stock {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.no__stock h3 {
+    background-color: #FF3623;
+    text-align: center;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    padding: .5rem 0;
+}
+
+.no__stock p {
+    font-weight: 500;
 }

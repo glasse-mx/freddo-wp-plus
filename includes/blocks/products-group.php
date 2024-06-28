@@ -50,7 +50,7 @@ function freddo_products_group_cb($atts)
             <?php while ($products->have_posts()) : $products->the_post();
                 global $product; ?>
                 <div class="product__card" id="<?= 'product-' . get_the_ID() ?>">
-                    <div class="card__header">
+                    <a href="<?= the_permalink() ?>" class="card__header">
                         <?php if (freddoIsNew($product->get_date_created()->date('Y-m-d'))) : ?>
                             <span class="new__badge">Nuevo</span>
                         <?php endif; ?>
@@ -58,7 +58,7 @@ function freddo_products_group_cb($atts)
                             <span class="sale__badge">Oferta</span>
                         <?php endif; ?>
                         <img src="<?= has_post_thumbnail() ? the_post_thumbnail_url() : FREDDO_WP_PLUS_URL . '/assets/img/logo-initial.png' ?>" alt="<?= 'Imagen de ' . the_title() ?>">
-                    </div>
+                    </a>
 
                     <div class="card__body">
                         <div class="info">
@@ -74,19 +74,19 @@ function freddo_products_group_cb($atts)
                                     <b>Desde: </b> <span><?= freddoPriceFormat(freddoGetMinPrice($product)); ?></span>
                                 </p>
                                 <div class="variations__display">
-                                    <?php for ($i = 0; $i < min(count($variations), 5); $i++) : $variation = $variations[$i]; ?>
+                                    <?php for ($i = 0; $i < min(count($variations), 4); $i++) : $variation = $variations[$i]; ?>
                                         <div class="selector__item">
                                             <label>
                                                 <input onclick="handleSetVariation(<?= get_the_ID() ?>)" type="radio" name="sabor" id="<?= $variation['variation_id'] ?>" value="<?= $variation['variation_id'] ?>" rel="nofollow" data-sabor-name=<?= ($variation['attributes']['attribute_sabor']) ?> data-price="<?= get_post_meta($variation['variation_id'], '_sale_price', true) ? get_post_meta($variation['variation_id'], '_sale_price', true) : get_post_meta($variation['variation_id'], '_regular_price', true) ?>">
-                                                <img class="color" src=" <?= $variation['image']['url'] ?>" alt="<?= $variation['attributes']['attribute_sabor'] ?>" data-sabor-name="">
+                                                <img class="color" src=" <?= freddoGetVariationIconURI($variation) ?>" alt="<?= $variation['attributes']['attribute_sabor'] ?>" data-sabor-name="">
                                                 <span><?= $variation['attributes']['attribute_sabor'] ?></span>
 
                                             </label>
                                         </div>
                                     <?php endfor; ?>
-                                    <?php if (count($variations) > 5) : ?>
+                                    <?php if (count($variations) > 4) : ?>
                                         <div class="selector__item">
-                                            <a href="<?= the_permalink(); ?>" class="show-more-variations">+<?= count($variations) - 5 ?></a>
+                                            <a href="<?= the_permalink(); ?>" class="show-more-variations">+<?= count($variations) - 4 ?></a>
                                         </div>
                                     <?php endif; ?>
 

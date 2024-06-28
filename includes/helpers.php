@@ -74,3 +74,33 @@ function freddoGetMinPrice($product)
         return $product->get_price();
     }
 }
+
+function freddoGetVariationIconURI($variation)
+{
+    switch ($variation['attributes']['attribute_sabor']) {
+        case '"Vainilla"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/vanilla.webp';
+            break;
+        case '"Chocolate"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/chocolate.webp';
+            break;
+        case '"Fresa"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/strawberry.webp';
+            break;
+        case '"Taro"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/taro.webp';
+            break;
+        case '"Capuchino"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/coffee.webp';
+        case '"Limon"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/lemon.webp';
+        case '"Mango"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/mango.webp';
+        case '"chamoy"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/chamoy.webp';
+        case '"Frutos Rojos"':
+            return FREDDO_WP_PLUS_URL . '/assets/img/flavors/redberries.webp';
+        default:
+            return false;
+    }
+}

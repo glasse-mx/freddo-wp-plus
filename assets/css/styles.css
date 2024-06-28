@@ -52,9 +52,7 @@
 }
 
 .variations__display label .color {
-    height: 20px;
-    width: 20px;
-    border-radius: 5px;
+    width: 50px;
 }
 
 .variations__display .selector__item label {
@@ -67,7 +65,7 @@
     cursor: pointer;
     border: 2px solid transparent;
     border-radius: 50%;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    
 }
 
 .variations__display .selector__item:hover label span {
