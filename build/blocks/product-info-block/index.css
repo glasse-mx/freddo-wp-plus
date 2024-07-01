@@ -129,4 +129,21 @@
        object-fit: contain;
 }
 
+@media screen and (max-width: 1024px) {
+
+    .highlights__container ul {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .highlights__container ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-info-block .content__card .content__body .info {
+        grid-template-columns: 1fr;
+    }
+}
+
 /*# sourceMappingURL=index.css.map*/

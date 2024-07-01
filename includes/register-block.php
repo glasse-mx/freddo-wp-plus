@@ -26,6 +26,9 @@ function freddo_register_blocks()
         ]],
         ['name' => 'product-gallery-block', 'options' => [
             'render_callback' => 'product_gallery_block_cb'
+        ]],
+        ['name' => 'related-products-block', 'options' => [
+            'render_callback' => 'related_products_block_cb'
         ]]
     ];
 

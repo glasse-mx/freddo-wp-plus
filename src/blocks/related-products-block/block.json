@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "freddo-plus/related-products-block",
+    "title": "Freddo Productos relacionados",
+    "category": "theme",
+    "icon": "",
+    "description": "Un bloque que muesta los productos relacionados de un producto en WooCommerce.",
+    "keywords": ["woocommerce", "productos", "relacionados", "related", "products", "freddo", "plus"],
+    "version": "1",
+    "textdomain": "freddo-plus",
+    "editorScript": "file:./index.js",
+    "attributes": {},
+    "style": "file:./index.css"	
+}

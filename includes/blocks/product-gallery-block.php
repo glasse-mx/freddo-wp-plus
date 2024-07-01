@@ -16,22 +16,28 @@ function product_gallery_block_cb()
 
     ob_start();
 ?>
-    <div class="product-gallery-block">
-        <div class="swiper product-swiper">
-            <div class="swiper-wrapper">
-                <?php foreach ($galleryFull as $item) : ?>
-                    <div class="swiper-slide">
-                        <img src="<?= $item ?>" alt="" data-fancybox="gallery">
-                    </div>
-                <?php endforeach ?>
+    <?php if (!empty($galleryFull[0])) : ?>
+        <div class="product-gallery-block">
+            <div class="swiper product-swiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ($galleryFull as $item) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $item ?>" alt="" data-fancybox="gallery">
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <?php if (count($galleryFull) > 1) : ?>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                <?php endif; ?>
             </div>
-            <?php if (count($galleryFull) > 1) : ?>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            <?php endif; ?>
         </div>
-    </div>
+    <?php else : ?>
+        <div class="product__no-gallery d-flex justify-content-center">
+            <img src="<?= FREDDO_WP_PLUS_URL . 'assets/img/logo-initial.png' ?>" alt="Freddo">
+        </div>
+    <?php endif; ?>
 <?php
     $output = ob_get_contents();
     ob_end_clean();
