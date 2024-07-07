@@ -29,7 +29,12 @@ function freddo_register_blocks()
         ]],
         ['name' => 'related-products-block', 'options' => [
             'render_callback' => 'related_products_block_cb'
-        ]]
+        ]],
+        ['name' => 'basic-whatsapp-button', 'options' => [
+            'render_callback' => 'freddo_basic_whatsapp_button_cb'
+        ]],
+        ['name' => 'spesc-carousel'],
+        ['name' => 'spec-carousel-card']
     ];
 
     foreach ($blocks as $block) {

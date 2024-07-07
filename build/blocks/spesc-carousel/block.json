@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "freddo-plus/spesc-carousel",
+  "title": "Carousel de Tarjetas SPESC",
+  "category": "widgets",
+  "icon": "",
+  "description": "Un Bloque para crear un carousel interactivo de tarjetas SPESC.",
+  "keywords": [
+    "carousel",
+    "tarjetas",
+    "spesc",
+    "cards",
+    "slider",
+    "freddo-plus"
+  ],
+  "version": "1",
+  "textdomain": "freddo-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "name": {
+      "type": "string",
+      "default": "SPESC"
+    },
+    "showNavigation": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPagination": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "style": "file:./index.css",
+  "example": {
+    "attributes": {
+      "name": "SPESC",
+      "showNavigation": true,
+      "showPagination": true
+    },
+    "innerBlocks": [
+      {
+        "name": "freddo-plus/spec-carousel-card",
+        "attributes": {
+          "title": "SPESC",
+          "description": "Conoce nuestra variedad de productos SPESC",
+          "imgURL": "https://via.placeholder.com/150",
+          "ctaLink": "#"
+        }
+      }
+    ]
+  }
+}

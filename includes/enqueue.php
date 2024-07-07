@@ -18,4 +18,9 @@ function freddo_plus_enqueue_cb()
     if (is_product()) {
         wp_enqueue_script('freddo-product-swiper-js', FREDDO_WP_PLUS_URL . 'assets/js/product-swiper.js', ['freddo-swiper-js', 'freddo-fancybox-js'], FREDDO_WP_PLUS_VERSION, true);
     }
+
+    $settings = get_option('freddo_settings');
+    if ($settings['cliengo']) {
+        wp_enqueue_script('freddo-cliengo', FREDDO_WP_PLUS_URL . '/assets/js/cliengo.js', [], FREDDO_WP_PLUS_VERSION, true);
+    }
 }

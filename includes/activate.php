@@ -24,4 +24,12 @@ function freddo_activate_plugin()
             'whatsapp' => '',
         ]);
     }
+
+    $settings = get_option('freddo_settings');
+
+    if (!$settings) {
+        add_option('freddo_settings', [
+            'cliengo' => true,
+        ]);
+    }
 }

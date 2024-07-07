@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "freddo-plus/basic-whatsapp-button",
+  "title": "Boton Whatsapp",
+  "category": "widgets",
+  "icon": "",
+  "description": "Boton basico de contacto de Whatsapp",
+  "keywords": [
+    "freddo-plus",
+    "basic-whatsapp-button",
+    "whatsapp-button",
+    "whatsapp",
+    "button",
+    "freddo-plus-basic-whatsapp-button"
+  ],
+  "version": "1",
+  "textdomain": "freddo-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {},
+  "style": "file:./index.css"
+}

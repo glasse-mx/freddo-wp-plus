@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "freddo-plus/spec-carousel-card",
+  "title": "Tarjeta de Carousel SPESC",
+  "category": "widgets",
+  "icon": "",
+  "description": "Tarjeta para carousel de SPESC.",
+  "keywords": [
+    "carousel",
+    "tarjeta",
+    "spesc",
+    "card",
+    "slider",
+    "freddo-plus"
+  ],
+  "version": "1",
+  "textdomain": "freddo-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "imageID": {
+      "type": "number",
+      "default": 0
+    },
+    "imageURL": {
+      "type": "string",
+      "default": "https://via.placeholder.com/150"
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": "Alt de la Imagen"
+    },
+    "title": {
+      "type": "string",
+      "default": "Título de la Tarjeta"
+    },
+    "content": {
+      "type": "string",
+      "default": "Contenido de la Tarjeta"
+    },
+    "link": {
+      "type": "string",
+      "default": "#"
+    },
+    "linkText": {
+      "type": "string",
+      "default": "Leer Más"
+    }
+  },
+  "style": "file:./index.css"
+}

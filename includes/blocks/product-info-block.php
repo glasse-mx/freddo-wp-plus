@@ -5,6 +5,16 @@ function product_info_block_cb()
     global $product;
     $atributos = $product->get_attributes();
     $highlights = get_post_meta($product->get_id(), '_product_highlights', true);
+
+    $cruzados = $product->get_cross_sell_ids();
+
+    foreach ($cruzados as $cruzado) {
+        $cruzado = wc_get_product($cruzado);
+        if (has_term('reguladores', 'product_cat', $cruzado->get_id())) {
+            $reguladorID[] = $cruzado->get_id();
+        }
+    }
+
     ob_start();
 ?>
     <div class="product-info-block">
@@ -60,15 +70,50 @@ function product_info_block_cb()
 
                         </div>
                         <div class="col">
-                            <p>Debido a la variación repentina de corriente alterna en México, se recomienda el uso de Regulador de Voltaje Freddo.</p>
+                            <p>Debido a la variación repentina de corriente alterna en México, se recomienda el uso de Regulador de Voltaje Freddo. <b>Con la compra del regulador recomendado, tu garantía se extiende a partes eléctricas.</b> En caso de tener un voltaje alto, (por encima de 123V), la máquina marcará: “Error de alto voltaje en pantalla (UH)¨. Se debe tomar en cuenta que para operar una Máquina, es necesario cumplir con los requisitos para la conexión de electricidad. Debes tener una línea directa para la máquina y utilizar pastillas de 30 AMP (una bajada sólo para la máquina utilizando un cable calibre 8). Se recomienda el uso del siguiente diagrama de instalación eléctrica, para el correcto funcionamiento de la máquina.</p>
 
-                            <p><b>Con la compra del regulador recomendado, tu garantía se extiende a partes eléctricas</b></p>
+                            <?php if (!empty($reguladorID)) : $power = wc_get_product($reguladorID[0]) ?>
+                                <div class="supply__card">
+                                    <a href="<?= $power->get_permalink() ?>" class="card__header">
+                                        <?php if (freddoIsNew($power->get_date_created()->date('Y-m-d'))) : ?>
+                                            <span class="new__badge">Nuevo</span>
+                                        <?php endif; ?>
+                                        <?php if ($power->is_on_sale()) : ?>
+                                            <span class="sale__badge">Oferta</span>
+                                        <?php endif; ?>
+                                        <?= $power->get_image() ?>
 
-                            <p>En caso de tener un voltaje alto, <b>(por encima de 123V)</b>, la máquina marcará Error de alto voltaje en pantalla (UH).</p>
+                                    </a>
+                                    <div class="card__body">
+                                        <div class="info">
+                                            <h3 class="product__title"><?= $power->get_name(); ?></h3>
+                                            <p><?= $power->get_short_description() ?></p>
+                                        </div>
 
-                            <p>Se debe tomar en cuenta que para operar una Máquina, es necesario cumplir con los requisitos para la conexión de electricidad. Debes tener una línea directa para la máquina y utilizar pastillas de 30 AMP (una bajada sólo para la máquina utilizando un cable calibre 8).</p>
+                                        <div class="price__holder">
+                                            <?php if ($product->is_on_sale()) : ?> <p class="price-scratched">
+                                                    <b>Precio de Lista:</b> <?= freddoPriceFormat($power->get_regular_price()); ?>
+                                                </p>
+                                                <p class="price sale-price">
+                                                    <b>Precio de Oferta:</b> <?= freddoPriceFormat($power->get_sale_price()); ?>
+                                                </p>
+                                            <?php else : ?>
+                                                <p class="price">
+                                                    <b>Precio de Lista:</b> <?= freddoPriceFormat($power->get_regular_price()); ?>
+                                                </p>
+                                            <?php endif; ?>
+                                        </div>
 
-                            <p>Se recomienda el uso del siguiente diagrama de instalación eléctrica, para el correcto funcionamiento de la máquina.</p>
+                                        <div class="footer">
+                                            <a href=" <?= '?add-to-cart=' . $power->get_id() ?>" class="add_to_cart_button ajax_add_to_cart" rel="nofollow" rel="nofollow">
+                                                <button>
+                                                    Añadir al carrito
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
